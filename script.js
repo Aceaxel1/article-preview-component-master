@@ -1,19 +1,25 @@
+console.log("Script loaded");
+
 document.addEventListener('DOMContentLoaded', function () {
   const shareButton = document.querySelector('.share__button');
   const sharePopup = document.querySelector('.share__popup');
 
   if (shareButton && sharePopup) {
-    shareButton.addEventListener('click', function (e) {
-      e.stopPropagation();
-      sharePopup.classList.toggle('active');
-      shareButton.classList.toggle('active');
+    shareButton.addEventListener('mouseenter', function () {
+      sharePopup.classList.add('active');
+      shareButton.classList.add('active');
     });
-    // Hide popup when clicking outside
-    document.addEventListener('click', function (e) {
-      if (!shareButton.contains(e.target) && !sharePopup.contains(e.target)) {
-        sharePopup.classList.remove('active');
-        shareButton.classList.remove('active');
-      }
+    shareButton.addEventListener('mouseleave', function () {
+      sharePopup.classList.remove('active');
+      shareButton.classList.remove('active');
+    });
+    sharePopup.addEventListener('mouseenter', function () {
+      sharePopup.classList.add('active');
+      shareButton.classList.add('active');
+    });
+    sharePopup.addEventListener('mouseleave', function () {
+      sharePopup.classList.remove('active');
+      shareButton.classList.remove('active');
     });
   }
 }); 

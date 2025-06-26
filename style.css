@@ -19,6 +19,7 @@ body {
   max-width: 730px;
   overflow: hidden;
   margin: 2rem;
+  position: relative;
 }
 
 .article-preview__image img {
@@ -36,14 +37,17 @@ body {
 }
 
 .article-preview__title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: hsl(217, 19%, 35%);
   margin: 0 0 1rem 0;
+  line-height: 1.3;
 }
 
 .article-preview__text {
   color: hsl(214, 17%, 51%);
-  font-size: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
   margin-bottom: 2rem;
 }
 
@@ -73,11 +77,12 @@ body {
 .author__name {
   font-weight: 700;
   color: hsl(217, 19%, 35%);
+  font-size: 1rem;
 }
 
 .author__date {
   color: hsl(212, 23%, 69%);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .article-preview__share {
@@ -103,17 +108,18 @@ body {
 
 .share__popup {
   display: none;
-  position: absolute;
-  bottom: 120%;
+  position: fixed;
   left: 50%;
-  transform: translateX(-50%);
+  top: calc(50% - 180px); /* Adjust as needed to appear above the card */
+  transform: translate(-50%, -100%);
   background: hsl(217, 19%, 35%);
   color: #fff;
   border-radius: 10px;
   padding: 1rem 2rem;
   box-shadow: 0 8px 16px rgba(72, 85, 106, 0.15);
   white-space: nowrap;
-  z-index: 10;
+  z-index: 100;
+  display: flex;
   align-items: center;
   gap: 1rem;
 }
