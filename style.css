@@ -118,6 +118,14 @@ body {
   gap: 1rem;
 }
 
+.share__popup.active {
+  display: flex;
+}
+
+.share__button.active {
+  background: hsl(214, 17%, 51%);
+}
+
 .share__popup span {
   text-transform: uppercase;
   letter-spacing: 4px;
