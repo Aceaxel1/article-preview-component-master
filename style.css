@@ -16,21 +16,20 @@ body {
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(72, 85, 106, 0.1);
   display: flex;
-  max-width: 730px;
-  overflow: hidden;
+  max-width: 695px;
   margin: 2rem;
-  position: relative;
 }
 
 .article-preview__image img {
   width: 285px;
   height: 100%;
   object-fit: cover;
-  display: block;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .article-preview__content {
-  padding: 2rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -93,38 +92,43 @@ body {
   background: hsl(210, 46%, 95%);
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 1s;
 }
 
-.share__button:hover {
-  background: hsl(214, 17%, 51%);
+.share__button img {
+  filter: brightness(0) invert(1);
 }
+
+.share__button:hover, .article-preview__share:hover .share__button {
+  background: hsl(217, 19%, 35%);
+}
+
 
 .share__popup {
   display: none;
-  position: fixed;
+  position: absolute;
+  bottom: 180%; 
   left: 50%;
-  top: calc(50% - 180px); /* Adjust as needed to appear above the card */
-  transform: translate(-50%, -100%);
+  transform: translateX(-50%);
   background: hsl(217, 19%, 35%);
   color: #fff;
   border-radius: 10px;
-  padding: 1rem 2rem;
+  padding: 1.3rem 3rem;
   box-shadow: 0 8px 16px rgba(72, 85, 106, 0.15);
   white-space: nowrap;
-  z-index: 100;
-  display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.share__popup.active {
+
+.article-preview__share:hover .share__popup,
+.article-preview__share:focus-within .share__popup {
   display: flex;
 }
 
@@ -143,6 +147,31 @@ body {
   width: 20px;
   height: 20px;
   margin: 0 0.25rem;
+}
+
+.share__popup-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 12px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.share__popup-arrow::after {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: hsl(217, 19%, 35%);
+  transform: rotate(45deg);
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  transform: translateX(-50%) rotate(45deg);
+  box-shadow: 0 2px 6px rgba(72, 85, 106, 0.08);
 }
 
 /* Responsive styles */
