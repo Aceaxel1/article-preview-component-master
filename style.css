@@ -101,6 +101,13 @@ body {
   transition: background 1s;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .share__button {
+    transition: background 1s;
+  }
+}
+
+
 .share__button img {
   filter: brightness(0) invert(1);
 }
