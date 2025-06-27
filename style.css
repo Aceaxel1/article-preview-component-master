@@ -98,14 +98,8 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 1s;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .share__button {
-    transition: none;
-  }
-}
 
 .share__button img {
   filter: brightness(0) invert(1);
@@ -169,7 +163,6 @@ body {
   width: 18px;
   height: 18px;
   background: hsl(217, 19%, 35%);
-  transform: rotate(45deg);
   position: absolute;
   left: 50%;
   top: -10px;
@@ -182,7 +175,7 @@ body {
 }
 
 /* Responsive styles */
-@media (max-width: 600px) {
+@media (max-width: 37.5rem) {
   .article-preview {
     flex-direction: column;
     max-width: 90vw;
